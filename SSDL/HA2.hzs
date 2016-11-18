@@ -1,0 +1,75 @@
+<!DOCTYPE CrossStudio_for_MSP430_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints>
+  <BreakpointListItem line="38" action="" hardwareBreakpoint="" trigger="" useHWbreakpoint="false" group="Breakpoints" type="Breakpoint" state="4" counter="0" isFunctionBreakpoint="false" filename="C:\SSDL\1112\AA236A\aek\1112_AA236A_aek_HA2\SSDL\io.c" expression="" />
+  <BreakpointListItem line="43" action="" hardwareBreakpoint="" trigger="" useHWbreakpoint="false" group="Breakpoints" type="Breakpoint" state="4" counter="0" isFunctionBreakpoint="false" filename="C:\SSDL\1112\AA236A\aek\1112_AA236A_aek_HA2\SSDL\io.c" expression="" />
+  <BreakpointListItem line="44" action="" hardwareBreakpoint="" trigger="" useHWbreakpoint="false" group="Breakpoints" type="Breakpoint" state="4" counter="0" isFunctionBreakpoint="false" filename="C:\SSDL\1112\AA236A\aek\1112_AA236A_aek_HA2\SSDL\io.c" expression="" />
+  <BreakpointListItem line="36" action="" hardwareBreakpoint="" trigger="" useHWbreakpoint="false" group="Breakpoints" type="Breakpoint" state="2" counter="0" isFunctionBreakpoint="false" filename="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\msg.h" expression="" />
+ </Breakpoints>
+ <EEMRegistersWindow>
+  <EEMRegisters moduleClockControl="60d7" generalClockControl="2e" />
+ </EEMRegistersWindow>
+ <EEMStateStorageWindow>
+  <EEMStateStorage control="2" />
+ </EEMStateStorageWindow>
+ <EEMTriggerSequencerWindow>
+  <EEMTriggers seqnxtstate0="0" seqnxtstate1="0" seq_ctl="0" seqaction="" />
+ </EEMTriggerSequencerWindow>
+ <EEMTriggersWindow/>
+ <ExecutionCountWindow/>
+ <Memory1>
+  <MemoryWindow autoEvaluate="0" addressText="" numColumns="8" sizeText="" dataSize="1" radix="16" addressSpace="" />
+ </Memory1>
+ <Memory2>
+  <MemoryWindow autoEvaluate="0" addressText="" numColumns="8" sizeText="" dataSize="1" radix="16" addressSpace="" />
+ </Memory2>
+ <Memory3>
+  <MemoryWindow autoEvaluate="0" addressText="" numColumns="8" sizeText="" dataSize="1" radix="16" addressSpace="" />
+ </Memory3>
+ <Memory4>
+  <MemoryWindow autoEvaluate="0" addressText="" numColumns="8" sizeText="" dataSize="1" radix="16" addressSpace="" />
+ </Memory4>
+ <Project>
+  <ProjectSessionItem path="HA2" name="unnamed" />
+  <ProjectSessionItem path="HA2;HA2" name="unnamed" />
+  <ProjectSessionItem path="HA2;HA2;Source Files" name="unnamed" />
+ </Project>
+ <Register1>
+  <RegisterWindow openNodes="" binaryNodes="" hiddenNodes="" unsignedNodes="" visibleGroups="I/O Port P2" decimalNodes="" octalNodes="" asciiNodes="" />
+ </Register1>
+ <Register2>
+  <RegisterWindow openNodes="" binaryNodes="" hiddenNodes="" unsignedNodes="" visibleGroups="" decimalNodes="" octalNodes="" asciiNodes="" />
+ </Register2>
+ <Register3>
+  <RegisterWindow openNodes="" binaryNodes="" hiddenNodes="" unsignedNodes="" visibleGroups="" decimalNodes="" octalNodes="" asciiNodes="" />
+ </Register3>
+ <Register4>
+  <RegisterWindow openNodes="" binaryNodes="" hiddenNodes="" unsignedNodes="" visibleGroups="" decimalNodes="" octalNodes="" asciiNodes="" />
+ </Register4>
+ <TargetWindow programAction="" uploadFileType="" programLoadAddress="" programSize="" uploadFileName="" uploadMemoryInterface="" programFileName="" uploadStartAddress="" programFileType="" uploadSize="" programMemoryInterface="" />
+ <TraceWindow>
+  <Trace enabled="Yes" />
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Two Seconds" >
+   <Watchpoint linenumber="0" radix="10" name="myCounter" expression="myCounter" filename="" />
+   <Watchpoint linenumber="0" radix="11" name="index" expression="index" filename="" />
+  </Watches>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never" />
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never" />
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never" />
+ </Watch4>
+ <Files>
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\main.c" y="27" path="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\main.c" left="0" selected="0" name="unnamed" top="30" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="33" debugPath="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\msg.c" y="8" path="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\msg.c" left="0" selected="0" name="unnamed" top="68" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\io2.c" y="19" path="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\io2.c" left="0" selected="1" name="unnamed" top="9" />
+ </Files>
+ <MSP430CrossStudioWindow activeProject="HA2" autoConnectTarget="TI MSP-FET430PIF" debugSearchFileMap="" fileDialogInitialDirectory="C:\Users\aa236_1516\Downloads\AA236A_30092015_mat_HA2 (1)\AA236A_30092015_mat_HA2\SSDL" fileDialogDefaultFilter="*.c" autoConnectCapabilities="3455" debugSearchPath="" buildConfiguration="Debug" />
+</session>

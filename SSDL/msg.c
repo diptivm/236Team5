@@ -1,0 +1,99 @@
+/******************************************************************************
+(C) Copyright Pumpkin, Inc. All Rights Reserved.
+
+This file may be distributed under the terms of the License
+Agreement provided with this software.
+
+THIS FILE IS PROVIDED AS IS WITH NO WARRANTY OF ANY KIND,
+INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE.
+
+$Source: C:\\RCS\\D\\Pumpkin\\Library\\MSP430\\Src\\USART_UART1_msg_ts.c,v $
+$Author: aek $
+$Revision: 3.2 $
+$Date: 2009-11-01 22:53:51-08 $
+
+******************************************************************************/
+#include "config.h"
+#include "msg.h"
+#include "usart_uart.h"
+#include <salvo.h>
+
+
+/******************************************************************************
+****                                                                       ****
+**                                                                           **
+MsgTS()
+
+Output a time-stamped message.
+
+**                                                                           **
+****                                                                       ****
+******************************************************************************/
+
+int getDays (void){
+  int days;
+  OSgltypeTick ticks;
+  ticks = OSGetTicks();  // Ticks corresponds to 10ms
+  ticks = ticks/100;
+  days = ticks/86400;
+  return (days);
+}
+
+int getHours (void){
+  unsigned long days;
+  int hour;
+  OSgltypeTick ticks;
+  ticks = OSGetTicks();  // Ticks corresponds to 10ms
+  ticks = ticks/100;
+  days = ticks/86400;
+  hour = (ticks - days*86400)/3600;
+  return (hour);
+}
+
+int getMinutes (void){
+  unsigned long hours;
+  int min;
+  OSgltypeTick ticks;
+  ticks = OSGetTicks();  // Ticks corresponds to 10ms
+  ticks = ticks/100;
+  hours = ticks/3600;
+  min = (ticks - hours*3600)/60;
+  return (min);
+}
+
+int getSeconds (void){
+  unsigned long min;
+  int sec;
+  OSgltypeTick ticks;
+  ticks = OSGetTicks();  // Ticks corresponds to 10ms
+  ticks = ticks/100;
+  min = ticks/60;
+  sec = ticks - min*60;
+  return (sec);
+}
+
+
+void MsgTS (const char * cP) {
+
+  unsigned int size;
+  char strTicks[TICKS_BUFFER_SIZE];
+  
+  // Format strTicks to indicate which USART is talking, and display a timestamp.
+  sprintf(strTicks, "1:%02i:%02i:%02i:%02i  ", getDays(), getHours(), getMinutes(), getSeconds());
+
+  // Let's find out how big this string is ...
+  size = 1 + sizeof(strTicks) + strlen(cP) + sizeof(CRLF);
+
+  // Only if it can theoretically fit AND there's room in
+  //  the buffer do we output it.
+  if (size < TX1_BUFF_SIZE) {
+    while (usart_uart1_tx_free() < size);
+    usart_uart1_puts(strTicks);
+    usart_uart1_puts(cP);
+    usart_uart1_puts(CRLF);
+  } /* if */
+  
+  // Else handle error.
+}
+ /* MsgTS() */
