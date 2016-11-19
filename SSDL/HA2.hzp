@@ -18,6 +18,8 @@
       <file Name="io2.c" file_name="io2.c"/>
       <file file_name="msg.c"/>
       <file file_name="msg.h"/>
+      <file file_name="ui.c"/>
+      <file file_name="ui.h"/>
     </folder>
     <folder Name="System Files">
       <configuration Name="Common" filter="xml"/>

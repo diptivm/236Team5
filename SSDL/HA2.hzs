@@ -53,8 +53,8 @@
  </TraceWindow>
  <Watch1>
   <Watches active="1" update="Two Seconds" >
-   <Watchpoint linenumber="0" radix="10" name="myCounter" expression="myCounter" filename="" />
    <Watchpoint linenumber="0" radix="11" name="index" expression="index" filename="" />
+   <Watchpoint linenumber="0" radix="10" name="myCounter" expression="myCounter" filename="" />
   </Watches>
  </Watch1>
  <Watch2>
@@ -67,9 +67,10 @@
   <Watches active="0" update="Never" />
  </Watch4>
  <Files>
-  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\main.c" y="27" path="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\main.c" left="0" selected="0" name="unnamed" top="30" />
-  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="33" debugPath="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\msg.c" y="8" path="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\msg.c" left="0" selected="0" name="unnamed" top="68" />
-  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\io2.c" y="19" path="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\io2.c" left="0" selected="1" name="unnamed" top="9" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="23" debugPath="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\main.c" y="45" path="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\main.c" left="0" selected="0" name="unnamed" top="30" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\msg.c" y="8" path="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\msg.c" left="0" selected="0" name="unnamed" top="0" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="17" debugPath="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\io2.c" y="37" path="C:\SSDL\1617\AA236A\AA236A_1617_team5_HA2\SSDL\io2.c" left="0" selected="0" name="unnamed" top="0" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\SSDL\1617\GitHub\SSDL\batt.c" y="17" path="C:\SSDL\1617\GitHub\SSDL\batt.c" left="0" selected="1" name="unnamed" top="0" />
  </Files>
  <MSP430CrossStudioWindow activeProject="HA2" autoConnectTarget="TI MSP-FET430PIF" debugSearchFileMap="" fileDialogInitialDirectory="C:\Users\aa236_1516\Downloads\AA236A_30092015_mat_HA2 (1)\AA236A_30092015_mat_HA2\SSDL" fileDialogDefaultFilter="*.c" autoConnectCapabilities="3455" debugSearchPath="" buildConfiguration="Debug" />
 </session>
