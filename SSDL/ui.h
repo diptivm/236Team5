@@ -6,3 +6,6 @@ Functions available to all who include ui.h
 **                                                                           **
 ****                                                                       ****
 ******************************************************************************/
+extern void TaskUI(void);
+
+#define STR_TASK_UI   "TaskUI"

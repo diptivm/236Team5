@@ -6,3 +6,5 @@
 #define OSEVENTS           1 // keep this >=1 to avoid annoyances
 #define OSEVENT_FLAGS      0
 #define OSMESSAGE_QUEUES   0
+
+#error Poop!

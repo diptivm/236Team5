@@ -1,7 +1,7 @@
 <!DOCTYPE CrossStudio_Project_File>
 <solution Name="HA2" target="9" version="2">
   <project Name="HA2">
-    <configuration Name="Common" Target="MSP430F1611" build_use_hardware_multiplier="16-Bit Multiplier" c_user_include_directories=".;C:\\SSDL\\1617\\AA236A\\AA236A_1617_team5_HA2\\SSDL" linker_memory_map_file="$(PackagesDir)/targets/msp430/MSP430F1611.xml" linker_section_placement_file="$(StudioDir)/targets/section_placement_info_ab_iv16.xml" msp430_debug_interface="JTAG" msp430_identify_string="MSP430F1611" msp430_insn_set="MSP430" optimize_register_allocation="None" project_directory="" project_type="Executable"/>
+    <configuration Name="Common" Target="MSP430F1611" build_use_hardware_multiplier="16-Bit Multiplier" c_user_include_directories="" linker_memory_map_file="$(PackagesDir)/targets/msp430/MSP430F1611.xml" linker_section_placement_file="$(StudioDir)/targets/section_placement_info_ab_iv16.xml" msp430_debug_interface="JTAG" msp430_identify_string="MSP430F1611" msp430_insn_set="MSP430" optimize_register_allocation="None" project_directory="" project_type="Executable"/>
     <folder Name="Source Files">
       <configuration Name="Common" filter="c;h;s;asm;inc;s43"/>
       <file Name="isr.c" file_name="isr.c"/>
@@ -45,7 +45,7 @@
       </folder>
     </folder>
   </project>
-  <configuration Name="Debug" build_debug_information="Yes" build_use_hardware_multiplier="Yes" c_user_include_directories=".;C:\\SSDL\\1112\\AA236A\\aek\\1112_AA236A_aek_HA2\\SSDL;C:\\Pumpkin\\Library\\MSP430\\Inc;C:\\Pumpkin\\Salvo\\Inc" linker_printf_fp_enabled="Yes" optimize_register_allocation="None"/>
+  <configuration Name="Debug" build_debug_information="Yes" build_use_hardware_multiplier="Yes" c_user_include_directories=".;C:\\ssdl\\1617\\github\\ssdl;C:\\Pumpkin\\Library\\MSP430\\Inc;C:\\Pumpkin\\Salvo\\Inc" linker_printf_fp_enabled="Yes" optimize_register_allocation="None"/>
   <configuration Name="Release" build_debug_information="No" c_preprocessor_definitions="NDEBUG" optimize_block_locality="Yes" optimize_copy_propagation="Yes" optimize_cross_calling="Standard" optimize_cross_jumping="Yes" optimize_dead_code="Yes" optimize_jump_chaining="Yes" optimize_jump_threading="Yes" optimize_register_allocation="None" optimize_tail_merging="Yes"/>
   <configuration Name="Common" linker_printf_fmt_level="long"/>
 </solution>
