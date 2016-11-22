@@ -13,12 +13,14 @@ TaskUI()
 ****                                                                       ****
 ******************************************************************************/
 void TaskUI(void) {
+  unsigned char cmd;
   MsgTS(STR_TASK_UI ": Starting.");
 
   while(1) {
     //OS_Delay(200);
     OS_WaitSem(SEM_UI_CHAR, OSNO_TIMEOUT);
-    sprintf(strTmp, STR_TASK_UI ": Hello from TaskUI");
+    cmd = usart_uart1_getchar();
+    sprintf(strTmp, STR_TASK_UI ": Hello from TaskUI. Read %d", cmd);
     MsgTS(strTmp);
   }
 }
