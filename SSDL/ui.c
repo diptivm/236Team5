@@ -16,7 +16,8 @@ void TaskUI(void) {
   MsgTS(STR_TASK_UI ": Starting.");
 
   while(1) {
-    OS_Delay(200);
+    //OS_Delay(200);
+    OS_WaitSem(SEM_UI_CHAR, OSNO_TIMEOUT);
     sprintf(strTmp, STR_TASK_UI ": Hello from TaskUI");
     MsgTS(strTmp);
   }

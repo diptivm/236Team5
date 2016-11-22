@@ -40,6 +40,8 @@ void main(void) {
 
   // Initialize the RTOS.
   OSInit();
+  
+  OSCreateSem(SEM_UI_CHAR, 0);
 
   // Create the various tasks.
   OSCreateTask(TaskADC,        OSTCBP(1),  3);

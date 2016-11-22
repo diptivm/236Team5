@@ -20,4 +20,4 @@ extern char strTmp[];            // Anyone can use this shared buffer
 #define WDT_OFF				WDTCTL = WDTPW + WDTHOLD
 #define WDT_ON				WDTCTL = WDT_ARST_250
 
-
+#define SEM_UI_CHAR                     OSECBP(1)
