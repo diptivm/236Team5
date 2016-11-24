@@ -2,6 +2,7 @@
 #include "ui.h"                 // Good to self-reference
 #include "salvo.h"                // Req'd because we call e.g. OSDelay() 
 #include "msg.h"    // Req'd because we call usart_uart1_msg_ts()
+#include "doCmds.h"                 // Req'd because we call setCmd()
 
 
 /******************************************************************************
@@ -26,28 +27,23 @@ void TaskUI(void) {
     switch(tolower(inpChar)) {
       case 'h':
       case '?':
-        sprintf(strTmp, STR_TASK_UI ": Read h");
-        MsgTS(strTmp);
+        setCmd('h');
         break;
 
       case 'i':
-        sprintf(strTmp, STR_TASK_UI ": Read i");
-        MsgTS(strTmp);
+        setCmd('i');
         break;
   
       case 'r':
-        sprintf(strTmp, STR_TASK_UI ": Read r");
-        MsgTS(strTmp);
+        setCmd('r');
         break;
 
       case 't':
-        sprintf(strTmp, STR_TASK_UI ": Read t");
-        MsgTS(strTmp);
+        setCmd('t');
         break;
 
       case 'v':
-        sprintf(strTmp, STR_TASK_UI ": Read v");
-        MsgTS(strTmp);
+        setCmd('v');
         break;
 
       case '1':
@@ -57,8 +53,7 @@ void TaskUI(void) {
       case '5':
       case '6':
       case '7':
-        sprintf(strTmp, STR_TASK_UI ": Read number");
-        MsgTS(strTmp);
+        setCmd(inpChar); //The cmd index to dispatch is simply inpChar
         break;
 
       default:
