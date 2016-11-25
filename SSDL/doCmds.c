@@ -1,7 +1,8 @@
 #include "main.h"                 // Application header
-#include "doCmds.h"                 // Good to self-reference
-#include "salvo.h"                // Req'd because we call e.g. OSDelay() 
-#include "msg.h"    // Req'd because we call usart_uart1_msg_ts()
+#include "msp430.h"              //Req'd because we use WDTCTL 
+#include "doCmds.h"              // Good to self-reference
+#include "salvo.h"               // Req'd because we call e.g. OSDelay() 
+#include "msg.h"                // Req'd because we call usart_uart1_msg_ts()
 
 unsigned char cmd = 0;
 
@@ -33,8 +34,10 @@ void TaskDoCmds(void) {
         break;
   
       case 'r':
-        sprintf(strTmp, STR_TASK_DO_CMDS ": Received r");
+        sprintf(strTmp, STR_TASK_DO_CMDS " r: Reset (via WDT) in 1s");
         MsgTS(strTmp);
+        OS_Delay(100);
+        WDTCTL = 0xDEAD;
         break;
 
       case 't':
