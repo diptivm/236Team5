@@ -23,7 +23,7 @@ void TaskDoCmds(void) {
 
     switch(tolower(cmd)) {
       case 'h':
-        sprintf(strTmp, STR_TASK_DO_CMDS ": Received h");
+        sprintf(strTmp, STR_TASK_DO_CMDS ": h: The following commands are supported:");
         MsgTS(strTmp);
         break;
 

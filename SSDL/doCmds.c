@@ -23,7 +23,7 @@ void TaskDoCmds(void) {
 
     switch(tolower(cmd)) {
       case 'h':
-        sprintf(strTmp, STR_TASK_DO_CMDS ": Received h");
+        sprintf(strTmp, STR_TASK_DO_CMDS ": h|?: Commands: {h|?, i, r, t, v, 1-7}");
         MsgTS(strTmp);
         break;
 
