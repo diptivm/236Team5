@@ -46,7 +46,7 @@ void TaskDoCmds(void) {
         break;
 
       case 'v':
-        sprintf(strTmp, STR_TASK_DO_CMDS ": Received v");
+        sprintf(strTmp, STR_TASK_DO_CMDS " v: " VERSION_NUM " built on "__DATE__" at "__TIME__".");
         MsgTS(strTmp);
         break;
 
