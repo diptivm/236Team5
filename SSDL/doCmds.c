@@ -19,10 +19,10 @@ void TaskDoCmds(void) {
   MsgTS(STR_TASK_DO_CMDS ": Starting.");
 
   while(1) {
+    BattState newChargeState = DIS_DEAD;
     OS_Delay(200);
     sprintf(strTmp, STR_TASK_DO_CMDS ": TakskDoCmds has cmd = %d", cmd);
     MsgTS(strTmp);
-    BattState newChargeState = DIS_DEAD;
 
     switch(tolower(cmd)) {
       case 'h':

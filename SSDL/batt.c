@@ -4,7 +4,6 @@
 #include "salvo.h"                // Req'd because we call e.g. OSDelay() 
 #include "msg.h"                  // Req'd because we call MsgTS()
 
-
 /******************************************************************************
 ****                                                                       ****
 **                                                                           **
@@ -23,11 +22,11 @@ TaskBatt()
 static BattState ChargeState = DIS_DEAD;
 
 void TaskBatt(void) {
-  MsgTS(STR_TASK_BATT ": Starting.");
   float CHRG_level = RtnCHRG();
   float VBATT_level = RtnBattVoltage();
   float USB_level = Rtn5VUSB();
   BattState newChargeState = DIS_DEAD;
+  MsgTS(STR_TASK_BATT ": Starting.");
   while(1) {
     OS_Delay(200);
 
@@ -39,9 +38,9 @@ void TaskBatt(void) {
     
     //First check if USB is plugged in or not.
     if(USB_level > CMOS_HI){
-      if(CHRG_level < FLOAT_LO){
+      if(CHRG_level < CHRG_FLOAT_LO){
         newChargeState = CHRG_CC;
-      } else if(CHRG_level < FLOAT_HI){
+      } else if(CHRG_level < CHRG_FLOAT_HI){
         newChargeState = CHRG_CV;
       } else{
         newChargeState = CHRG_FLT;
@@ -59,13 +58,13 @@ void TaskBatt(void) {
     }
     ChargeState = newChargeState;
   }
+}
 
-  BattState GetBattState(void){
-    return ChargeState;
-  }
+BattState GetBattState(void){
+  return ChargeState;
+}
 
-  //For testing: set the battery state
-  void SetBattState(BattState newState){
-    ChargeState = newState;
-  }
+//For testing: set the battery state
+void SetBattState(BattState newState){
+  ChargeState = newState;
 }
