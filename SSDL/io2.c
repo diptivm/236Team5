@@ -17,16 +17,7 @@ void TaskIO(void) {
   MsgTS(STR_TASK_IO ": Starting.");
 
   while(1) {
-    MsgTS(STR_TASK_IO ": Turning LED0 ON.");
-    SetLED0();
-    SetLED1();
-    SetLED2();
-    OS_Delay(10);
-    MsgTS(STR_TASK_IO ": Turning LED0 OFF.");
-    ClrLED0();
-    ClrLED1();
-    ClrLED2();
-    OS_Delay(90);
+    OS_Delay(100);
   }
 }
 

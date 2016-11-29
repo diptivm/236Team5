@@ -21,12 +21,12 @@ void TaskIO(void) {
     SetLED0();
     SetLED1();
     SetLED2();
-    OS_Delay(50);
+    OS_Delay(10);
     MsgTS(STR_TASK_IO ": Turning LED0 OFF.");
     ClrLED0();
     ClrLED1();
     ClrLED2();
-    OS_Delay(50);
+    OS_Delay(90);
   }
 }
 

@@ -4,6 +4,7 @@
 #include "batt.h"                 // Req'd because we reference TaskBatt()
 #include "init.h"                 // Req'd because we call Init()
 #include "io2.h"                   // Req'd because we reference TaskIO()
+#include "led.h"
 #include "main.h"                 // Application header
 #include "salvo.h"                // Req'd because we call e.g. OSInit() 
 #include "usart_uart.h"           // Req'd because we call usart_uart1_puts()
@@ -46,10 +47,11 @@ void main(void) {
 
   // Create the various tasks.
   OSCreateTask(TaskADC,        OSTCBP(1),  3);
-  OSCreateTask(TaskBatt,       OSTCBP(2),  4);
+ // OSCreateTask(TaskBatt,       OSTCBP(2),  4);
   OSCreateTask(TaskIO,         OSTCBP(3),  11);
   OSCreateTask(TaskUI,         OSTCBP(4),  11);
   OSCreateTask(TaskDoCmds,     OSTCBP(5),  11);
+  OSCreateTask(TaskLED,        OSTCBP(6),  11);
 
   // Since ISRs are present, we must enable interrupts globally. No need to touch interrupts again.
   __enable_interrupt();
