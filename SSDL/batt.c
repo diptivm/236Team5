@@ -13,16 +13,51 @@ TaskBatt()
 **                                                                           **
 ****                                                                       ****
 ******************************************************************************/
+//Module constants
+#define VPROG_MAX               1.47    // VPROG in constant-current mode is 1.50V
+#define CMOS_HI                 3.5 //CMOS high for determining whether USB is on
+#define CHRG_FLOAT_LO           0.75    // -CHRG has a 30uA weak pull-down through 50k (5%) when
+#define CHRG_FLOAT_HI           2.68    //   float mode is entered: 3.3V - ([15,50]uA * 50kOhm)
+
 //State variable;
 static BattState ChargeState = DIS_DEAD;
 
 void TaskBatt(void) {
   MsgTS(STR_TASK_BATT ": Starting.");
-
+  float CHRG_level = RtnCHRG();
+  float VBATT_level = RtnBattVoltage();
+  float USB_level = Rtn5VUSB();
+  BattState newChargeState = DIS_DEAD;
   while(1) {
     OS_Delay(200);
-    sprintf(strTmp, STR_TASK_BATT ": Battery Voltage is %.2fV", RtnBattVoltage());
-    MsgTS(strTmp);
+
+    //Sample the voltages when entering the loop.
+    CHRG_level = RtnCHRG();
+    VBATT_level = RtnBattVoltage();
+    USB_level = Rtn5VUSB();
+
+    
+    //First check if USB is plugged in or not.
+    if(USB_level > CMOS_HI){
+      if(CHRG_level < FLOAT_LO){
+        newChargeState = CHRG_CC;
+      } else if(CHRG_level < FLOAT_HI){
+        newChargeState = CHRG_CV;
+      } else{
+        newChargeState = CHRG_FLT;
+      }
+    } else {
+      if(VBATT_level < VBATT_NEARLY_DEAD){
+        newChargeState = DIS_DEAD;
+      }else if(VBATT_level < VBATT_PARTIALLY_CHARGED){
+        newChargeState = DIS_LO_V;
+      }else if(VBATT_level < VBATT_FULLY_CHARGED){
+        newChargeState = DIS_MED_V;
+      } else {
+        newChargeState = DIS_HI_V;
+      }
+    }
+    ChargeState = newChargeState;
   }
 
   BattState GetBattState(void){
