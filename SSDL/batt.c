@@ -13,6 +13,9 @@ TaskBatt()
 **                                                                           **
 ****                                                                       ****
 ******************************************************************************/
+//State variable;
+static BattState ChargeState = DIS_DEAD;
+
 void TaskBatt(void) {
   MsgTS(STR_TASK_BATT ": Starting.");
 
@@ -20,5 +23,14 @@ void TaskBatt(void) {
     OS_Delay(200);
     sprintf(strTmp, STR_TASK_BATT ": Battery Voltage is %.2fV", RtnBattVoltage());
     MsgTS(strTmp);
+  }
+
+  BattState GetBattState(void){
+    return ChargeState;
+  }
+
+  //For testing: set the battery state
+  void SetBattState(BattState newState){
+    ChargeState = newState;
   }
 }
