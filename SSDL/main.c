@@ -10,7 +10,6 @@
 #include "usart_uart.h"           // Req'd because we call usart_uart1_puts()
 #include "msg.h"                  // Req'd because we call MsgTS()
 #include "ui.h"                   // Req'd because we reference TaskUI()
-#include "doCmds.h"               // Req'd because we reference TaskDoCmds()
 
 
 /******************************************************************************
@@ -50,8 +49,7 @@ void main(void) {
  // OSCreateTask(TaskBatt,       OSTCBP(2),  4);
   OSCreateTask(TaskIO,         OSTCBP(3),  11);
   OSCreateTask(TaskUI,         OSTCBP(4),  11);
-  OSCreateTask(TaskDoCmds,     OSTCBP(5),  11);
-  OSCreateTask(TaskLED,        OSTCBP(6),  11);
+  OSCreateTask(TaskLED,        OSTCBP(5),  11);
 
   // Since ISRs are present, we must enable interrupts globally. No need to touch interrupts again.
   __enable_interrupt();
