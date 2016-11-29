@@ -1,7 +1,8 @@
 #include "main.h"                 // Application header
 #include "ui.h"                 // Good to self-reference
 #include "salvo.h"                // Req'd because we call e.g. OSDelay() 
-#include "msg.h"    // Req'd because we call usart_uart1_msg_ts()
+#include "usart_uart.h"           //Req'd because we call usart_uart1_getchar()
+#include "msg.h"                  // Req'd because we call MsgTS()
 #include "doCmds.h"                 // Req'd because we call setCmd()
 
 

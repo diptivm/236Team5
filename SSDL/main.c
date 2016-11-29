@@ -7,7 +7,7 @@
 #include "main.h"                 // Application header
 #include "salvo.h"                // Req'd because we call e.g. OSInit() 
 #include "usart_uart.h"           // Req'd because we call usart_uart1_puts()
-#include "msg.h"                  // Req'd because we call usart_uart1_msg_ts()
+#include "msg.h"                  // Req'd because we call MsgTS()
 #include "ui.h"                   // Req'd because we reference TaskUI()
 #include "doCmds.h"               // Req'd because we reference TaskDoCmds()
 

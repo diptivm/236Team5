@@ -2,7 +2,7 @@
 #include "msp430.h"              //Req'd because we use WDTCTL 
 #include "doCmds.h"              // Good to self-reference
 #include "salvo.h"               // Req'd because we call e.g. OSDelay() 
-#include "msg.h"                // Req'd because we call usart_uart1_msg_ts()
+#include "msg.h"                // Req'd because we call MsgTS()
 
 unsigned char cmd = 0;
 

@@ -21,3 +21,8 @@ extern char strTmp[];            // Anyone can use this shared buffer
 #define WDT_ON				WDTCTL = WDT_ARST_250
 
 #define SEM_UI_CHAR                     OSECBP(1)
+
+// Application-wide constants (battery states)
+#define VBATT_NEARLY_DEAD               2.90
+#define VBATT_PARTIALLY_CHARGED         3.60
+#define VBATT_FULLY_CHARGED             4.13

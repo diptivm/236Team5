@@ -1,7 +1,9 @@
 <!DOCTYPE CrossStudio_for_MSP430_Session_File>
 <session>
  <Bookmarks/>
- <Breakpoints/>
+ <Breakpoints>
+  <BreakpointListItem line="25" action="" hardwareBreakpoint="" trigger="" useHWbreakpoint="false" group="Breakpoints" type="Breakpoint" state="2" counter="0" isFunctionBreakpoint="false" filename="C:\SSDL\MSP430 Debug\1617\GitHub\SSDL\doCmds.c" expression="" />
+ </Breakpoints>
  <EEMRegistersWindow>
   <EEMRegisters moduleClockControl="60d7" generalClockControl="2e" />
  </EEMRegistersWindow>
@@ -30,7 +32,12 @@
   <ProjectSessionItem path="HA2;HA2" name="unnamed" />
   <ProjectSessionItem path="HA2;HA2;Pumpkin Files" name="unnamed" />
   <ProjectSessionItem path="HA2;HA2;Pumpkin Files;Library Files" name="unnamed" />
+  <ProjectSessionItem path="HA2;HA2;Salvo Files" name="unnamed" />
+  <ProjectSessionItem path="HA2;HA2;Salvo Files;Configuration File" name="unnamed" />
+  <ProjectSessionItem path="HA2;HA2;Salvo Files;Library File" name="unnamed" />
+  <ProjectSessionItem path="HA2;HA2;Salvo Files;Source Files" name="unnamed" />
   <ProjectSessionItem path="HA2;HA2;Source Files" name="unnamed" />
+  <ProjectSessionItem path="HA2;HA2;System Files" name="unnamed" />
  </Project>
  <Register1>
   <RegisterWindow openNodes="" binaryNodes="" hiddenNodes="" unsignedNodes="" visibleGroups="I/O Port P2" decimalNodes="" octalNodes="" asciiNodes="" />
@@ -50,8 +57,8 @@
  </TraceWindow>
  <Watch1>
   <Watches active="1" update="Two Seconds" >
-   <Watchpoint linenumber="0" radix="10" name="myCounter" expression="myCounter" filename="" />
    <Watchpoint linenumber="0" radix="11" name="index" expression="index" filename="" />
+   <Watchpoint linenumber="0" radix="10" name="myCounter" expression="myCounter" filename="" />
   </Watches>
  </Watch1>
  <Watch2>
@@ -64,11 +71,17 @@
   <Watches active="0" update="Never" />
  </Watch4>
  <Files>
-  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="2" debugPath="C:\SSDL\1617\GitHub\SSDL\main.c" y="43" path="C:\SSDL\1617\GitHub\SSDL\main.c" left="0" selected="0" name="unnamed" top="29" />
-  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="54" debugPath="C:\SSDL\1617\GitHub\SSDL\ui.c" y="23" path="C:\SSDL\1617\GitHub\SSDL\ui.c" left="0" selected="0" name="unnamed" top="7" />
-  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\SSDL\1617\GitHub\SSDL\ui.h" y="11" path="C:\SSDL\1617\GitHub\SSDL\ui.h" left="0" selected="0" name="unnamed" top="0" />
-  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="57" debugPath="C:\SSDL\1617\GitHub\SSDL\doCmds.c" y="25" path="C:\SSDL\1617\GitHub\SSDL\doCmds.c" left="0" selected="1" name="unnamed" top="11" />
-  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\SSDL\1617\GitHub\SSDL\doCmds.h" y="12" path="C:\SSDL\1617\GitHub\SSDL\doCmds.h" left="0" selected="0" name="unnamed" top="0" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\SSDL\MSP430 Debug\1617\GitHub\SSDL\doCmds.c" y="4" path="C:\SSDL\MSP430 Debug\1617\GitHub\SSDL\doCmds.c" left="0" selected="0" name="unnamed" top="0" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="34" debugPath="C:\SSDL\MSP430 Debug\1617\GitHub\SSDL\batt.c" y="4" path="C:\SSDL\MSP430 Debug\1617\GitHub\SSDL\batt.c" left="0" selected="0" name="unnamed" top="0" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\SSDL\MSP430 Debug\1617\GitHub\SSDL\batt.h" y="0" path="C:\SSDL\MSP430 Debug\1617\GitHub\SSDL\batt.h" left="0" selected="0" name="unnamed" top="0" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\SSDL\MSP430 Debug\1617\GitHub\SSDL\doCmds.h" y="13" path="C:\SSDL\MSP430 Debug\1617\GitHub\SSDL\doCmds.h" left="0" selected="0" name="unnamed" top="0" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="19" debugPath="C:\ssdl\msp430 debug\1617\github\ssdl\ui.c" y="16" path="C:\ssdl\msp430 debug\1617\github\ssdl\ui.c" left="0" selected="1" name="unnamed" top="0" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="msg.h" y="31" path="msg.h" left="0" selected="0" name="unnamed" top="12" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\ssdl\msp430 debug\1617\github\ssdl\msg.c" y="17" path="C:\ssdl\msp430 debug\1617\github\ssdl\msg.c" left="0" selected="0" name="unnamed" top="0" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\Pumpkin\Library\MSP430\Src\USART_UART1.c" y="18" path="C:\Pumpkin\Library\MSP430\Src\USART_UART1.c" left="0" selected="0" name="unnamed" top="3" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\Pumpkin\Library\MSP430\Inc\USART_UART.h" y="168" path="C:\Pumpkin\Library\MSP430\Inc\USART_UART.h" left="0" selected="0" name="unnamed" top="148" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\SSDL\MSP430 Debug\1617\GitHub\SSDL\main.c" y="9" path="C:\SSDL\MSP430 Debug\1617\GitHub\SSDL\main.c" left="0" selected="0" name="unnamed" top="0" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Latin1" x="0" debugPath="C:\SSDL\MSP430 Debug\1617\GitHub\SSDL\io2.c" y="4" path="C:\SSDL\MSP430 Debug\1617\GitHub\SSDL\io2.c" left="0" selected="0" name="unnamed" top="0" />
  </Files>
  <MSP430CrossStudioWindow activeProject="HA2" autoConnectTarget="TI MSP-FET430PIF" debugSearchFileMap="" fileDialogInitialDirectory="C:\Users\aa236_1516\Downloads\AA236A_30092015_mat_HA2 (1)\AA236A_30092015_mat_HA2\SSDL" fileDialogDefaultFilter="*.c" autoConnectCapabilities="3455" debugSearchPath="" buildConfiguration="Debug" />
 </session>

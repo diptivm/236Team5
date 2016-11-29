@@ -47,7 +47,7 @@
       </folder>
     </folder>
   </project>
-  <configuration Name="Debug" build_debug_information="Yes" build_use_hardware_multiplier="Yes" c_user_include_directories=".;C:\\ssdl\\1617\\github\\ssdl;C:\\Pumpkin\\Library\\MSP430\\Inc;C:\\Pumpkin\\Salvo\\Inc" linker_printf_fp_enabled="Yes" optimize_register_allocation="None"/>
+  <configuration Name="Debug" build_debug_information="Yes" build_use_hardware_multiplier="Yes" c_user_include_directories=".;C:\\SSDL\\MSP430 Debug\\1617\\GitHub\\SSDL\\;C:\\Pumpkin\\Library\\MSP430\\Inc;C:\\Pumpkin\\Salvo\\Inc" linker_printf_fp_enabled="Yes" optimize_register_allocation="None"/>
   <configuration Name="Release" build_debug_information="No" c_preprocessor_definitions="NDEBUG" optimize_block_locality="Yes" optimize_copy_propagation="Yes" optimize_cross_calling="Standard" optimize_cross_jumping="Yes" optimize_dead_code="Yes" optimize_jump_chaining="Yes" optimize_jump_threading="Yes" optimize_register_allocation="None" optimize_tail_merging="Yes"/>
   <configuration Name="Common" linker_printf_fmt_level="long"/>
 </solution>

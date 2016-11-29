@@ -2,7 +2,7 @@
 #include "main.h"                 // Application header
 #include "msp430.h"               // Contains MSP430-specific definitions like P2DIR
 #include "salvo.h"                // Req'd because we call e.g. OSDelay() 
-#include "usart_uart_msg_ts.h"    // Req'd because we call usart_uart1_msg_ts()
+#include "msg.h"                // Req'd because we call MsgTS()
 
 
 /******************************************************************************
@@ -14,14 +14,18 @@ TaskIO()
 ****                                                                       ****
 ******************************************************************************/
 void TaskIO(void) {
-  usart_uart1_msg_ts(STR_TASK_IO ": Starting.");
+  MsgTS(STR_TASK_IO ": Starting.");
 
   while(1) {
-    usart_uart1_msg_ts(STR_TASK_IO ": Turning LED0 ON.");
+    MsgTS(STR_TASK_IO ": Turning LED0 ON.");
     SetLED0();
+    SetLED1();
+    SetLED2();
     OS_Delay(50);
-    usart_uart1_msg_ts(STR_TASK_IO ": Turning LED0 OFF.");
+    MsgTS(STR_TASK_IO ": Turning LED0 OFF.");
     ClrLED0();
+    ClrLED1();
+    ClrLED2();
     OS_Delay(50);
   }
 }
@@ -29,7 +33,7 @@ void TaskIO(void) {
 /******************************************************************************
 ****                                                                       ****
 **                                                                           **
-ClrLED0()
+SetLED0() ClrLED0()
 
 **                                                                           **
 ****                                                                       ****
@@ -44,8 +48,40 @@ void SetLED0(void) {
   P2OUT |= BIT0;
 }
 
+/******************************************************************************
+****                                                                       ****
+**                                                                           **
+SetLED1() ClrLED1()
 
+**                                                                           **
+****                                                                       ****
+******************************************************************************/
+void ClrLED1(void) {
+  P2DIR |=  BIT1;
+  P2OUT &= ~BIT1;
+}
 
+void SetLED1(void) {
+  P2DIR |= BIT1;
+  P2OUT |= BIT1;
+}
 
+/******************************************************************************
+****                                                                       ****
+**                                                                           **
+SetLED2() ClrLED2()
+
+**                                                                           **
+****                                                                       ****
+******************************************************************************/
+void ClrLED2(void) {
+  P2DIR |=  BIT2;
+  P2OUT &= ~BIT2;
+}
+
+void SetLED2(void) {
+  P2DIR |= BIT2;
+  P2OUT |= BIT2;
+}
 
 
