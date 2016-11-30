@@ -6,6 +6,7 @@
 #include "usart_uart.h"           //Req'd because we call usart_uart1_getchar()
 #include "msg.h"                  // Req'd because we call MsgTS()
 #include "batt.h"
+#include "telem.h"
 
 
 /******************************************************************************
@@ -48,7 +49,7 @@ void TaskUI(void) {
         break;
 
       case 't':
-        sprintf(strTmp, STR_TASK_UI ": Received t");
+        sprintf(strTmp, STR_TASK_UI ": t: On-chip temperature is %u C", tempDisplay());
         MsgTS(strTmp);
         break;
 
