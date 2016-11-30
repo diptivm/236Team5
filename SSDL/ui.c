@@ -41,7 +41,7 @@ void TaskUI(void) {
         break;
   
       case 'r':
-        sprintf(strTmp, STR_TASK_UI " r: Reset (via WDT) in 1s");
+        sprintf(strTmp, STR_TASK_UI ": r: Reset (via WDT) in 1s");
         MsgTS(strTmp);
         OS_Delay(100);
         WDTCTL = 0xDEAD;
@@ -53,7 +53,7 @@ void TaskUI(void) {
         break;
 
       case 'v':
-        sprintf(strTmp, STR_TASK_UI " v: " VERSION_NUM " built on "__DATE__" at "__TIME__".");
+        sprintf(strTmp, STR_TASK_UI ": v: " VERSION_NUM " built on "__DATE__" at "__TIME__".");
         MsgTS(strTmp);
         break;
 
