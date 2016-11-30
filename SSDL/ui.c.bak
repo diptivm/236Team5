@@ -6,6 +6,7 @@
 #include "usart_uart.h"           //Req'd because we call usart_uart1_getchar()
 #include "msg.h"                  // Req'd because we call MsgTS()
 #include "batt.h"
+#inlcude "adc.h"                  //Req'd because we call several adc functions for on-chip temp, battery voltages, etc.
 
 
 /******************************************************************************
@@ -41,19 +42,19 @@ void TaskUI(void) {
         break;
   
       case 'r':
-        sprintf(strTmp, STR_TASK_UI " r: Reset (via WDT) in 1s");
+        sprintf(strTmp, STR_TASK_UI ": r: Reset (via WDT) in 1s");
         MsgTS(strTmp);
         OS_Delay(100);
         WDTCTL = 0xDEAD;
         break;
 
       case 't':
-        sprintf(strTmp, STR_TASK_UI ": Received t");
+        sprintf(strTmp, STR_TASK_UI ": t: On-chip temperature is %d C", RtnOnChipTemp());
         MsgTS(strTmp);
         break;
 
       case 'v':
-        sprintf(strTmp, STR_TASK_UI " v: " VERSION_NUM " built on "__DATE__" at "__TIME__".");
+        sprintf(strTmp, STR_TASK_UI ": v: " VERSION_NUM " built on "__DATE__" at "__TIME__".");
         MsgTS(strTmp);
         break;
 
