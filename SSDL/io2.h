@@ -15,5 +15,9 @@ extern void SetLED2(void);
 extern void ClrLED2(void);
 extern void TurnChargerOn(void);
 extern void TurnChargerOff(void);
+extern void TurnRegulatorOn(void);
+extern void TurnRegulatorOff(void);
+extern char GetACPR(void);
+extern char GetFault(void);
 
 #define STR_TASK_IO  "TaskIO"

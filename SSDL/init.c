@@ -2,6 +2,7 @@
 #include "main.h"                 // Application header
 #include "msp430.h"               // Contains MSP430-specific definitions like DCOCTL
 #include "usart_uart.h"           // Req'd because we call usart_uart1_open();
+#include "io2.h"
 
 
 /******************************************************************************
@@ -38,4 +39,6 @@ void Init(void) {
   TACTL |= MC1;                   // Start Timer_A in continuous mode 
 
   usart_uart1_open(USART_UART_9600_N81_ACLK); // Initialize UART1 at 9600,N,8,1
+
+  TurnRegulatorOn();
 }
