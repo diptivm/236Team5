@@ -20,7 +20,7 @@ TaskBatt()
 
 //State variable;
 static BattState ChargeState = DIS_DEAD;
-OSgltypeTick chargingStartTicks = 0;
+static OSgltypeTick chargingStartTicks = 0;
 
 void TaskBatt(void) {
   float CHRG_level = RtnCHRG();
