@@ -14,7 +14,7 @@ Functions available to all who include batt.h
 
 extern void TaskBatt(void);
 
-typedef enum {CHRG_CC, CHRG_CV, CHRG_FLT, DIS_HI_V, DIS_MED_V, DIS_LO_V, DIS_DEAD} BattState;
+typedef enum {CHRG_CC, CHRG_CV, CHRG_FLT, DIS_HI_V, DIS_MED_V, DIS_LO_V, DIS_DEAD, FAULT} BattState;
 extern BattState GetBattState(void);
 extern void SetBattState(BattState);
 extern OSgltypeTick GetChargeTime(void); 

@@ -27,6 +27,8 @@ void TaskBatt(void) {
   float CHRG_level = RtnCHRG();
   float VBATT_level = RtnBattVoltage();
   float USB_level = Rtn5VUSB();
+  char FaultState = 0;
+  char ACPRState = 0;
   BattState newChargeState = DIS_DEAD;
   MsgTS(STR_TASK_BATT ": Starting.");
   while(1) {
@@ -36,20 +38,28 @@ void TaskBatt(void) {
     CHRG_level = RtnCHRG();
     VBATT_level = RtnBattVoltage();
     USB_level = Rtn5VUSB();
+    FaultState = GetFault();
+    ACPRState = GetACPR();
 
     
     //First check if USB is plugged in or not.
     if(USB_level > CMOS_HI){
       TurnChargerOn();
       if((ChargeState != CHRG_FLT) && (ChargeState != CHRG_CV) && (ChargeState != CHRG_CC)){
+        OS_Delay(20); //Delay so that the charger has time to start up and clear ACPR and fault.
         chargingStartTicks = OSGetTicks();  // Tick corresponds to 10ms
       }
+
       if(CHRG_level < CHRG_FLOAT_LO){
         newChargeState = CHRG_CC;
       } else if(CHRG_level < CHRG_FLOAT_HI){
         newChargeState = CHRG_CV;
       } else{
         newChargeState = CHRG_FLT;
+      }
+      //Go to fault state if any of the fault conditions are indicated.
+      if((ACPRState==0)||(FaultState==1)){
+        newChargeState = FAULT;
       }
     } else {
       TurnChargerOff();
@@ -62,8 +72,8 @@ void TaskBatt(void) {
       } else {
         newChargeState = DIS_HI_V;
       }
+      ChargeState = newChargeState;
     }
-    ChargeState = newChargeState;
   }
 }
 

@@ -50,6 +50,13 @@ void TaskLED(void) {
         OS_Delay(50);
         break;
 
+      case FAULT :
+        SetLED1();
+        OS_Delay(10);
+        ClrLED1();
+        OS_Delay(90);
+        break;
+
       case DIS_DEAD :
         OS_Delay(100);
         break;
