@@ -46,7 +46,7 @@ void main(void) {
 
   // Create the various tasks.
   OSCreateTask(TaskADC,        OSTCBP(1),  3);
- // OSCreateTask(TaskBatt,       OSTCBP(2),  4);
+  OSCreateTask(TaskBatt,       OSTCBP(2),  4);
   OSCreateTask(TaskIO,         OSTCBP(3),  11);
   OSCreateTask(TaskUI,         OSTCBP(4),  11);
   OSCreateTask(TaskLED,        OSTCBP(5),  11);

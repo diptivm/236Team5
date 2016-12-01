@@ -27,12 +27,13 @@ $Date: 2009-11-01 22:53:24-08 $
 #endif
 
 #define CRLF                                "\n\r"
-#define TICKS_BUFFER_SIZE                   15
+#define TICKS_BUFFER_SIZE                   30
 
 extern int getDays(void);
 extern int getHours(void);
 extern int getMinutes(void);
 extern int getSeconds(void);
+extern int getTenMillis(void);
 extern void MsgTS(const char * cP);
 
 

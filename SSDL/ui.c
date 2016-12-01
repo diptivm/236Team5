@@ -26,8 +26,8 @@ void TaskUI(void) {
     //OS_Delay(200);
     OS_WaitSem(SEM_UI_CHAR, OSNO_TIMEOUT);
     inpChar = usart_uart1_getchar();
-    sprintf(strTmp, STR_TASK_UI ": Hello from TaskUI. Read %d", inpChar);
-    MsgTS(strTmp);
+//    sprintf(strTmp, STR_TASK_UI ": Hello from TaskUI. Read %d", inpChar);
+//    MsgTS(strTmp);
 
     switch(tolower(inpChar)) {
       case 'h':
@@ -37,8 +37,9 @@ void TaskUI(void) {
         break;
 
       case 'i':
-        sprintf(strTmp, STR_TASK_UI ": Received i");
-        MsgTS(strTmp);
+        sprintf(strTmp, STR_TASK_UI ": i: System Info: ");
+        //MsgTS(strTmp);
+        telemDisplay();
         break;
   
       case 'r':

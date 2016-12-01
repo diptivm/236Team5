@@ -37,8 +37,9 @@ void TaskUI(void) {
         break;
 
       case 'i':
-        sprintf(strTmp, STR_TASK_UI ": i: System Info:");
-        MsgTS(strTmp);
+        sprintf(strTmp, STR_TASK_UI ": i: System Info: ");
+        //MsgTS(strTmp);
+        telemDisplay();
         break;
   
       case 'r':

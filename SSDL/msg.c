@@ -73,6 +73,14 @@ int getSeconds (void){
   return (sec);
 }
 
+int getTenMillis(void) {
+  unsigned long sec;
+  int tenMillis;
+  OSgltypeTick ticks;
+  ticks = OSGetTicks();  // Ticks corresponds to 10ms
+  sec = ticks/100;
+  return tenMillis = ticks - sec*100;
+}
 
 void MsgTS (const char * cP) {
 
@@ -80,7 +88,7 @@ void MsgTS (const char * cP) {
   char strTicks[TICKS_BUFFER_SIZE];
   
   // Format strTicks to indicate which USART is talking, and display a timestamp.
-  sprintf(strTicks, "1:%02i:%02i:%02i:%02i  ", getDays(), getHours(), getMinutes(), getSeconds());
+  sprintf(strTicks, "1:%02i:%02i:%02i:%02i.%02i  ", getDays(), getHours(), getMinutes(), getSeconds(), getTenMillis());
 
   // Let's find out how big this string is ...
   size = 1 + sizeof(strTicks) + strlen(cP) + sizeof(CRLF);

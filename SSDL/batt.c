@@ -78,7 +78,7 @@ void SetBattState(BattState newState){
 
 OSgltypeTick GetChargeTime(void){
   if((ChargeState == CHRG_FLT) || (ChargeState == CHRG_CV) || (ChargeState == CHRG_CC)){
-    return OSGetTicks() - chargingStartTicks;
+    return (OSGetTicks() - chargingStartTicks)/100;
    } else {
     return 0;
    }
