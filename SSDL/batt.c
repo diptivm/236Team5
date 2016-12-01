@@ -20,6 +20,7 @@ TaskBatt()
 
 //State variable;
 static BattState ChargeState = DIS_DEAD;
+OSgltypeTick chargingStartTicks = 0;
 
 void TaskBatt(void) {
   float CHRG_level = RtnCHRG();
@@ -38,6 +39,9 @@ void TaskBatt(void) {
     
     //First check if USB is plugged in or not.
     if(USB_level > CMOS_HI){
+      if((ChargeState != CHRG_FLT) && (ChargeState != CHRG_CV) && (ChargeState != CHRG_CC)){
+        chargingStartTicks = OSGetTicks();  // Tick corresponds to 10ms
+      }
       if(CHRG_level < CHRG_FLOAT_LO){
         newChargeState = CHRG_CC;
       } else if(CHRG_level < CHRG_FLOAT_HI){
@@ -68,3 +72,12 @@ BattState GetBattState(void){
 void SetBattState(BattState newState){
   ChargeState = newState;
 }
+
+OSgltypeTick GetChargeTime(void){
+  if((ChargeState == CHRG_FLT) || (ChargeState == CHRG_CV) || (ChargeState == CHRG_CC)){
+    return OSGetTicks() - chargingStartTicks;
+   } else {
+    return 0;
+   }
+}
+
