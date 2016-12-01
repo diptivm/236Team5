@@ -75,4 +75,21 @@ void SetLED2(void) {
   P2OUT |= BIT2;
 }
 
+/******************************************************************************
+****                                                                       ****
+**                                                                           **
+TurnChargerOn() TurnChargerOff()
 
+**                                                                           **
+****                                                                       ****
+******************************************************************************/
+
+void TurnChargerOn(void){
+  P2DIR |= BIT3|BIT4;
+  P2OUT |= BIT3|BIT4;
+}
+
+void TurnChargerOff(void){
+  P2DIR |= BIT3|BIT4;
+  P2OUT &= (~BIT3)&(~BIT4);  
+}

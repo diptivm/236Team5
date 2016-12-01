@@ -3,6 +3,7 @@
 #include "batt.h"                 // Good to self-reference
 #include "salvo.h"                // Req'd because we call e.g. OSDelay() 
 #include "msg.h"                  // Req'd because we call MsgTS()
+#include "io2.h"
 
 /******************************************************************************
 ****                                                                       ****
@@ -39,6 +40,7 @@ void TaskBatt(void) {
     
     //First check if USB is plugged in or not.
     if(USB_level > CMOS_HI){
+      TurnChargerOn();
       if((ChargeState != CHRG_FLT) && (ChargeState != CHRG_CV) && (ChargeState != CHRG_CC)){
         chargingStartTicks = OSGetTicks();  // Tick corresponds to 10ms
       }
@@ -50,6 +52,7 @@ void TaskBatt(void) {
         newChargeState = CHRG_FLT;
       }
     } else {
+      TurnChargerOff();
       if(VBATT_level < VBATT_NEARLY_DEAD){
         newChargeState = DIS_DEAD;
       }else if(VBATT_level < VBATT_PARTIALLY_CHARGED){

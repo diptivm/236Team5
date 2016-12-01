@@ -13,5 +13,7 @@ extern void SetLED1(void);
 extern void ClrLED1(void);
 extern void SetLED2(void);
 extern void ClrLED2(void);
+extern void TurnChargerOn(void);
+extern void TurnChargerOff(void);
 
 #define STR_TASK_IO  "TaskIO"
