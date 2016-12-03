@@ -181,18 +181,20 @@ difference = 27mA reported.
 **                                                                           **
 ****                                                                       ****
 ******************************************************************************/
-#if 0
+////#if 0
+//float RtnVCCCurrent(void) {
+//  if (Rtn_3p3V_enabled()) {
+//    return (((v_u16_vcc_mcu * SCALE_VCC_MCU * REF_VCC_MCU)-(v_u16_vcc * SCALE_VCC * REF_VCC))*(1000/(0.09*4095)));
+//  }
+//  else {
+//    return 0;
+//  }
+//}
+////#endif
+
 float RtnVCCCurrent(void) {
-  if (Rtn_3p3V_enabled()) {
     return (((v_u16_vcc_mcu * SCALE_VCC_MCU * REF_VCC_MCU)-(v_u16_vcc * SCALE_VCC * REF_VCC))*(1000/(0.09*4095)));
-  }
-  else {
-    return 0;
-  }
 }
-#endif
-
-
 /******************************************************************************
 ****                                                                       ****
 **                                                                           **

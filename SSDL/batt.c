@@ -18,6 +18,7 @@ TaskBatt()
 #define CMOS_HI                 3.5 //CMOS high for determining whether USB is on
 #define CHRG_FLOAT_LO           0.75    // -CHRG has a 30uA weak pull-down through 50k (5%) when
 #define CHRG_FLOAT_HI           2.68    //   float mode is entered: 3.3V - ([15,50]uA * 50kOhm)
+#define FINAL_FLOAT             4.15    // anything above this means we've reached final battery float voltage
 
 //State variable;
 static BattState ChargeState = DIS_DEAD;
@@ -44,13 +45,13 @@ void TaskBatt(void) {
       if((ChargeState != CHRG_FLT) && (ChargeState != CHRG_CV) && (ChargeState != CHRG_CC)){
         chargingStartTicks = OSGetTicks();  // Tick corresponds to 10ms
       }
-      if(CHRG_level < CHRG_FLOAT_LO){
-        newChargeState = CHRG_CC;
-      } else if(CHRG_level < CHRG_FLOAT_HI){
-        newChargeState = CHRG_CV;
-      } else{
+      if((CHRG_level > CHRG_FLOAT_HI) || (VBATT_level > FINAL_FLOAT)){
         newChargeState = CHRG_FLT;
-      }
+      } else if(CHRG_level < CHRG_FLOAT_LO){
+        newChargeState = CHRG_CC;
+      } else{
+        newChargeState = CHRG_CV;
+      } 
     } else {
       TurnChargerOff();
       if(VBATT_level < VBATT_NEARLY_DEAD){
