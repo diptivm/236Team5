@@ -18,6 +18,7 @@ TaskUI()
 ****                                                                       ****
 ******************************************************************************/
 void TaskUI(void) {
+  char battState;  
   BattState newChargeState;
   unsigned char inpChar;
   MsgTS(STR_TASK_UI ": Starting.");
@@ -110,6 +111,12 @@ void TaskUI(void) {
 
       case '0':
         //do nothing: by default
+        break;
+
+      case 's':
+        battState = (char) GetBattState();
+        sprintf(strTmp, STR_TASK_UI ": BattState is %u", battState);
+        MsgTS(strTmp);
         break;
 
       default:

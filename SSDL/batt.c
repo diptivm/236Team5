@@ -50,7 +50,7 @@ void TaskBatt(void) {
         OS_Delay(20); //Delay so that the charger has time to start up and clear ACPR and fault.
         chargingStartTicks = OSGetTicks();  // Tick corresponds to 10ms
       }
-      if((CHRG_level > CHRG_FLOAT_HI) || (VBATT_level > FINAL_FLOAT)){
+      if(CHRG_level > CHRG_FLOAT_HI){
         newChargeState = CHRG_FLT;
       } else if(CHRG_level < CHRG_FLOAT_LO){
         newChargeState = CHRG_CC;
@@ -58,7 +58,7 @@ void TaskBatt(void) {
         newChargeState = CHRG_CV;
       } 
       //Go to fault state if any of the fault conditions are indicated.
-      if((ACPRState==0)||(FaultState==1)){
+      if((ACPRState==1)||(FaultState==0)){
         newChargeState = FAULT;
       }
     } else {

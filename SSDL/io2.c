@@ -122,12 +122,16 @@ GetACPR()
 ****                                                                       ****
 ******************************************************************************/
 char GetACPR(void) {
-  P2DIR &=  ~BIT6;
-  if(P2IN&BIT6 > 0){
-    return 0;
-  } else {
-    return 1;
-  }
+//  P2DIR &=  ~BIT6;
+//  if(P2IN&BIT6 > 0){
+//    return 0;
+//  } else {
+//    return 1;
+//  }
+  char a;
+  P2DIR &= ~BIT6;
+  a=(P2IN&BIT6)>>6;
+  return a;
 }
 
 /******************************************************************************
@@ -139,11 +143,15 @@ GetFault()
 ****                                                                       ****
 ******************************************************************************/
 char GetFault(void) {
-  P2DIR &=  ~BIT7;
-  if(P2IN&BIT7 > 0){
-    return 0;
-  } else {
-    return 1;
-  }
+//  P2DIR &=  ~BIT7;
+//  if(P2IN&BIT7 > 0){
+//    return 0;
+//  } else {
+//    return 1;
+//  }
+  char a;
+  P2DIR &= ~BIT7;
+  a=(P2IN&BIT7)>>7;
+  return a;
 }
 
