@@ -103,12 +103,12 @@ TurnRegulatorOn() TurnRegulatorOff()
 ****                                                                       ****
 ******************************************************************************/
 
-void TurnRegulatorOn(void){
+void TurnRegulatorOff(void){
   P2DIR |= BIT5;
   P2OUT |= BIT5;
 }
 
-void TurnRegulatorOff(void){
+void TurnRegulatorOn(void){
   P2DIR |= BIT5;
   P2OUT &= (~BIT5);
 }
