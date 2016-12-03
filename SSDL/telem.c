@@ -9,11 +9,11 @@
 
 
 void telemDisplay(void) {
-  sprintf(strTmp + strlen(strTmp), "+5V_USB: %.2fV  charge time: %5ds", Rtn5VUSB(), GetChargeTime());
+  sprintf(strTmp + strlen(strTmp), "  +5V_USB: %.2fV  charge time: %5ds", Rtn5VUSB(), GetChargeTime());
   MsgTS(strTmp);
-  sprintf(strTmp, "  MCU: %.2fV VCC: %.2fV VCC current: %.2f mA temp: %uC", RtnVCCMCU(), RtnVCC(), RtnVCCCurrent(), RtnOnChipTemp());
+  sprintf(strTmp, "  MCU:  %.2fV   VCC:  %.2fV   VCC current: %5.0f mA temp: %2uC", RtnVCCMCU(), RtnVCC(), RtnVCCCurrent(), RtnOnChipTemp());
   MsgTS(strTmp);
-  sprintf(strTmp, "  Batt: %.2fV PROG: %.2f CHRG:%.2f -ACPR:%i -FAULT:%i", RtnBattVoltage(), RtnPROG(), RtnCHRG(), GetACPR(), GetFault());
+  sprintf(strTmp, "  Batt: %.2fV   PROG: %.2fV   CHRG:%.2fV    -ACPR:%i  -FAULT:%i", RtnBattVoltage(), RtnPROG(), RtnCHRG(), GetACPR(), GetFault());
   MsgTS(strTmp);
 }
 
