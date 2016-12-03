@@ -5,6 +5,7 @@
 #include "telem.h"                 // Good to self-reference
 #include "msg.h"                  // Req'd because we call MsgTS()
 #include "batt.h"                 // Req'd because we call GetChargeTime()
+#include "io2.h"
 
 
 void telemDisplay(void) {
