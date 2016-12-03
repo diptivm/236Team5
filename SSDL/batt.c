@@ -32,8 +32,9 @@ void TaskBatt(void) {
   char ACPRState = 0;
   BattState newChargeState = DIS_DEAD;
   MsgTS(STR_TASK_BATT ": Starting.");
+  OS_Delay(100);
   while(1) {
-    OS_Delay(200);
+    OS_Delay(20);
 
     //Sample the voltages when entering the loop.
     CHRG_level = RtnCHRG();
