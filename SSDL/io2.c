@@ -4,6 +4,8 @@
 #include "salvo.h"                // Req'd because we call e.g. OSDelay() 
 #include "msg.h"                // Req'd because we call MsgTS()
 
+static char RegulatorState = 1;
+
 
 /******************************************************************************
 ****                                                                       ****
@@ -106,11 +108,13 @@ TurnRegulatorOn() TurnRegulatorOff()
 void TurnRegulatorOff(void){
   P2DIR |= BIT5;
   P2OUT |= BIT5;
+  RegulatorState = 0;
 }
 
 void TurnRegulatorOn(void){
   P2DIR |= BIT5;
   P2OUT &= (~BIT5);
+  RegulatorState = 1;
 }
 
 /******************************************************************************
@@ -155,3 +159,9 @@ char GetFault(void) {
   return a;
 }
 
+/**
+* GetRegulatorState()
+*/
+char GetRegulatorState(void){
+  return RegulatorState;
+}

@@ -19,5 +19,6 @@ extern void TurnRegulatorOn(void);
 extern void TurnRegulatorOff(void);
 extern char GetACPR(void);
 extern char GetFault(void);
+extern char GetRegulatorState(void);
 
 #define STR_TASK_IO  "TaskIO"

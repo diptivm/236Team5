@@ -3,6 +3,7 @@
 #include <msp430.h>
 #include "salvo.h"
 #include "msg.h"
+#include "io2.h"
 #if defined(__CROSSWORKS_MSP430)
 #include <__cross_studio_io.h>
 #endif
@@ -193,7 +194,12 @@ difference = 27mA reported.
 ////#endif
 
 float RtnVCCCurrent(void) {
-    return (((v_u16_vcc_mcu * SCALE_VCC_MCU * REF_VCC_MCU)-(v_u16_vcc * SCALE_VCC * REF_VCC))*(1000/(0.09*4095)));
+    char RegulatorState = GetRegulatorState();
+    if(RegulatorState == 1){
+     return (((v_u16_vcc_mcu * SCALE_VCC_MCU * REF_VCC_MCU)-(v_u16_vcc * SCALE_VCC * REF_VCC))*(1000/(0.09*4095)));
+    } else {
+      return 0;
+    }
 }
 /******************************************************************************
 ****                                                                       ****

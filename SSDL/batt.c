@@ -47,6 +47,7 @@ void TaskBatt(void) {
     //First check if USB is plugged in or not.
     if(USB_level > CMOS_HI){
       TurnChargerOn();
+      TurnRegulatorOff();
       if((ChargeState != CHRG_FLT) && (ChargeState != CHRG_CV) && (ChargeState != CHRG_CC)){
         OS_Delay(20); //Delay so that the charger has time to start up and clear ACPR and fault.
         chargingStartTicks = OSGetTicks();  // Tick corresponds to 10ms
@@ -64,6 +65,7 @@ void TaskBatt(void) {
       }
     } else {
       TurnChargerOff();
+      TurnRegulatorOn();
       if(VBATT_level < VBATT_NEARLY_DEAD){
         newChargeState = DIS_DEAD;
       }else if(VBATT_level < VBATT_PARTIALLY_CHARGED){
