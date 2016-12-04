@@ -9,7 +9,7 @@
 
 
 void telemDisplay(void) {
-  sprintf(strTmp + strlen(strTmp), "  +5V_USB: %.2fV  charge time: %5lu", Rtn5VUSB(), GetChargeTime());
+  sprintf(strTmp + strlen(strTmp), "  +5V_USB: %.2fV  charge time: %5lus", Rtn5VUSB(), GetChargeTime());
   MsgTS(strTmp);
   sprintf(strTmp, "  MCU:  %.2fV   VCC:  %.2fV   VCC current: %5.0f mA temp: %2uC", RtnVCCMCU(), RtnVCC(), RtnVCCCurrent(), RtnOnChipTemp());
   MsgTS(strTmp);
