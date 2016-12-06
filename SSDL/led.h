@@ -1,7 +1,7 @@
 /******************************************************************************
 ****                                                                       ****
 **                                                                           **
-Functions available to all who include led.h
+Task available to all who include led.h.
 
 **                                                                           **
 ****                                                                       ****
