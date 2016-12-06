@@ -1,3 +1,7 @@
+#ifndef __main_h
+#define __main_h
+
+/**
 /******************************************************************************
 ****                                                                       ****
 **                                                                           **
@@ -6,7 +10,9 @@ of files ... kind of a catch-all.
 
 **                                                                           **
 ****                                                                       ****
-******************************************************************************/
+*******************************************************************************
+*/
+
 extern char strTmp[];            // Anyone can use this shared buffer
 
 #define VERSION_NUM                     "0.0.1"
@@ -26,3 +32,5 @@ extern char strTmp[];            // Anyone can use this shared buffer
 #define VBATT_NEARLY_DEAD               2.90
 #define VBATT_PARTIALLY_CHARGED         3.60
 #define VBATT_FULLY_CHARGED             4.13
+
+#endif /* __main_h */

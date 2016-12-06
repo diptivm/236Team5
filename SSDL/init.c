@@ -1,17 +1,19 @@
 #include "init.h"                 // Good to self-reference
+#include "io2.h"                  // Req'd because we call TurnRegulatorOn()
 #include "main.h"                 // Application header
 #include "msp430.h"               // Contains MSP430-specific definitions like DCOCTL
 #include "usart_uart.h"           // Req'd because we call usart_uart1_open();
-#include "io2.h"
 
 
+/**
 /******************************************************************************
 ****                                                                       ****
 **                                                                           **
 
 **                                                                           **
 ****                                                                       ****
-******************************************************************************/
+*******************************************************************************
+*/
 void Init(void) {
   unsigned int i;
 

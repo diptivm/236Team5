@@ -1,22 +1,45 @@
-#include "main.h"                 // Application header
-#include "msp430.h"              //Req'd because we use WDTCTL 
-#include "ui.h"                 // Good to self-reference
 #include <ctype.h>
-#include "salvo.h"                // Req'd because we call e.g. OSDelay() 
-#include "usart_uart.h"           //Req'd because we call usart_uart1_getchar()
+#include "batt.h"                 //Req'd because we use several variables and functions related to battery state
+#include "main.h"                 // Application header
 #include "msg.h"                  // Req'd because we call MsgTS()
-#include "batt.h"
-#include "telem.h"
+#include "msp430.h"              //Req'd because we use WDTCTL 
+#include "salvo.h"                // Req'd because we call e.g. OSDelay() 
+#include "telem.h"               // Req'd because we call tempDisplay() and telemDisplay()
+#include "ui.h"                 // Good to self-reference
+#include "usart_uart.h"           //Req'd because we call usart_uart1_getchar()
 
-
+/**
 /******************************************************************************
 ****                                                                       ****
 **                                                                           **
 TaskUI()
 
+Task that controls the text UI by processing incoming one-letter commands and
+responding where necessary. Task_UI waits on a semaphore that is signaled by 
+the Rx ISR when a key-press is received. It then requests the input char from 
+the usart_uart1_getchar() function provided in the Pumpkin libraries for MSP430
+and uses a switch case on this char to decide on the action to perform.
+Commands supported are - 
+h/H/?: help(lists commands)
+i/I: status information
+r/R: reset (restart program)
+t/T: display on-chip temperature
+v/V: display version
+1: switch to battery state CHRG_CC
+2: switch to battery state CHRG_CV
+3: switch to battery state CHRG_FLT
+4: switch to battery state DIS_HI_V
+5: switch to battery state DIS_MED_V
+6: switch to battery state DIS_LO_V
+7: switch to battery state DIS_DEAD
+S: display battery state number
+
+Input Parameters: None
+Outputs: None
 **                                                                           **
 ****                                                                       ****
-******************************************************************************/
+*******************************************************************************
+*/
 void TaskUI(void) {
   char battState;  
   BattState newChargeState;
@@ -120,6 +143,8 @@ void TaskUI(void) {
         break;
 
       default:
+        sprintf(strTmp, STR_TASK_UI ": Invalid command. Press h for help.");
+        MsgTS(strTmp);
         break;
     }
   }

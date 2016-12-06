@@ -1,35 +1,48 @@
 #include <__cross_studio_io.h>    // for CrossStudio debugging
-
 #include "adc.h"                  // Req'd because we reference TaskADC()
 #include "batt.h"                 // Req'd because we reference TaskBatt()
 #include "init.h"                 // Req'd because we call Init()
 #include "io2.h"                   // Req'd because we reference TaskIO()
-#include "led.h"
+#include "led.h"                  // Req'd because we reference TaskLED()
 #include "main.h"                 // Application header
-#include "salvo.h"                // Req'd because we call e.g. OSInit() 
-#include "usart_uart.h"           // Req'd because we call usart_uart1_puts()
 #include "msg.h"                  // Req'd because we call MsgTS()
+#include "salvo.h"                // Req'd because we call e.g. OSInit() 
 #include "ui.h"                   // Req'd because we reference TaskUI()
+#include "usart_uart.h"           // Req'd because we call usart_uart1_puts()
 
 
+/**
 /******************************************************************************
 ****                                                                       ****
 **                                                                           **
 Global variables used by any module in the application
 **                                                                           **
 ****                                                                       ****
-******************************************************************************/
+*******************************************************************************
+*/
 char strTmp[256];  // General-purpose buffer for creating long strings
 
 
+/**
 /******************************************************************************
 ****                                                                       ****
 **                                                                           **
-Here is a place to put doxygen-compatible comments & tags, etc. for main()
+main() function for the program. 
 
+Prints a startup message with version number and date/time of build.
+Creates the Salvo tasks and events required by the program.
+Enables interrupts.
+Starts the OS Scheduler.
+
+Tasks created: TaskADC, TaskBatt, TaskIO, TaskUI, TaskLED
+Events created: Semaphore (SEM_UI_CHAR)
+
+Input arguments: None.
+Output: None.
 **                                                                           **
 ****                                                                       ****
-******************************************************************************/
+*******************************************************************************
+*/
 void main(void) {
 
   Init();
