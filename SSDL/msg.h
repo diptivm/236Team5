@@ -22,7 +22,7 @@ extern void MsgTS(const char * cP);
 #ifndef GETCHAR_PUTCHAR_RETURN_ZERO
 #define  EOF_RETURN_CODE            EOF
 #else
-//#define  EOF_RETURN_CODE            0
+#define  EOF_RETURN_CODE            0
 #endif
 #endif
 

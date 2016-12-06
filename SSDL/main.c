@@ -5,10 +5,10 @@
 #include "io2.h"                   // Req'd because we reference TaskIO()
 #include "led.h"                  // Req'd because we reference TaskLED()
 #include "main.h"                 // Application header
-#include "msg.h"                  // Req'd because we call MsgTS()
 #include "salvo.h"                // Req'd because we call e.g. OSInit() 
 #include "ui.h"                   // Req'd because we reference TaskUI()
 #include "usart_uart.h"           // Req'd because we call usart_uart1_puts()
+#include "msg.h"                  // Req'd because we call MsgTS()
 
 
 /**
