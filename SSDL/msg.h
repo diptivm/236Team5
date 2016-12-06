@@ -18,12 +18,6 @@ extern void MsgTS(const char * cP);
 #ifndef __MsgTS
 #define __MsgTS
 
-#ifndef GETCHAR_PUTCHAR_RETURN_ZERO
-#define  EOF_RETURN_CODE            EOF
-#else
-//#define  EOF_RETURN_CODE            0
-#endif
-
 #define CRLF                                "\n\r"
 #define TICKS_BUFFER_SIZE                   30
 
