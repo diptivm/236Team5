@@ -19,7 +19,7 @@
 #define FINAL_FLOAT             4.15    // anything above this means we've reached final battery float voltage
 
 //State variable;
-static BattState ChargeState = DIS_DEAD;
+static BattState chargeState = DIS_DEAD;
 static OSgltypeTick chargingStartTicks = 0;
 
 ///State machine for the battery charger.
@@ -55,7 +55,7 @@ void TaskBatt(void) {
     if(USB_level > CMOS_HI){
       TurnChargerOn();
       TurnRegulatorOff();
-      if((ChargeState != CHRG_FLT) && (ChargeState != CHRG_CV) && (ChargeState != CHRG_CC)){
+      if((chargeState != CHRG_FLT) && (chargeState != CHRG_CV) && (chargeState != CHRG_CC)){
         OS_Delay(20); //Delay so that the charger has time to start up and clear ACPR and fault.
         chargingStartTicks = OSGetTicks();  // Tick corresponds to 10ms
       }
@@ -83,7 +83,7 @@ void TaskBatt(void) {
         newChargeState = DIS_HI_V;
       }
     }
-    ChargeState = newChargeState;
+    chargeState = newChargeState;
   }
 }
 
@@ -93,7 +93,7 @@ void TaskBatt(void) {
   \return The charger state.
 */
 BattState GetBattState(void){
-  return ChargeState;
+  return chargeState;
 }
 
 ///State setter
@@ -103,7 +103,7 @@ BattState GetBattState(void){
   \param newState The desired charger state
 */
 void SetBattState(BattState newState){
-  ChargeState = newState;
+  chargeState = newState;
 }
 
 ///Charge time getter
@@ -112,7 +112,7 @@ void SetBattState(BattState newState){
   \return The number of OS ticks since charging was started
 */
 OSgltypeTick GetChargeTime(void){
-  if((ChargeState == CHRG_FLT) || (ChargeState == CHRG_CV) || (ChargeState == CHRG_CC)){
+  if((chargeState == CHRG_FLT) || (chargeState == CHRG_CV) || (chargeState == CHRG_CC)){
     return (OSGetTicks() - chargingStartTicks)/100;
    } else {
     return 0;
