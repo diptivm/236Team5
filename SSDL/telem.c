@@ -8,33 +8,29 @@
 #include "telem.h"                 // Good to self-reference
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 telemDisplay()
 
 Function that printstelemetry collected by the system in a readable format, 
 including voltages, currents and status information as shown below:
 
-+5V_USB          x.xxV       Signal SNS_USB
-charge time    xxxxx s       Time elapsed since charging started
+<br>+5V_USB          x.xxV       Signal SNS_USB
+<br>charge time    xxxxx s       Time elapsed since charging started
 
-MCU              x.xxV       Signal VCC_MCU 
-VCC              x.xxV       SNS_VCC
-VCC Current   xxxxx mA       Calculated VCC current
-temp               xxC       On-chip temperature
+<br>MCU              x.xxV       Signal VCC_MCU 
+<br>VCC              x.xxV       SNS_VCC
+<br>VCC Current   xxxxx mA       Calculated VCC current
+<br>temp               xxC       On-chip temperature
  
-Batt:            x.xxV      Signal SNS_BATT
-PROG:            x.xxV      Signal SNS_PROG
-CHRG:            x.xxV      Signal SNS_CHRG
--ACPR:          1 or 0      -ACPR bit
--FAULT:         1 or 0      -FAULT bit
+<br>Batt:            x.xxV      Signal SNS_BATT
+<br>PROG:            x.xxV      Signal SNS_PROG
+<br>CHRG:            x.xxV      Signal SNS_CHRG
+<br>-ACPR:          1 or 0      -ACPR bit
+<br>-FAULT:         1 or 0      -FAULT bit
 
 Input Parameters: None
-Outputs: None
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+<br>Outputs: None
+
 */
 void telemDisplay(void) {
   sprintf(strTmp + strlen(strTmp), "  +5V_USB: %.2fV  charge time: %5lus", Rtn5VUSB(), GetChargeTime());
@@ -46,19 +42,15 @@ void telemDisplay(void) {
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 tempDisplay()
 
 Function that returns on-chip temperature collected by the ADC as an unsigned 
 integer.
 
 Input Parameters: None
-Outputs: unsigned int temperature
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+<br>Outputs: unsigned int temperature
+
 */
 unsigned int tempDisplay(void) {
   return RtnOnChipTemp();

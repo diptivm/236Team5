@@ -9,9 +9,7 @@
 #include "msg.h"                  // Req'd because we call MsgTS()
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 TaskUI()
 
 Task that controls the text UI by processing incoming one-letter commands and
@@ -19,26 +17,24 @@ responding where necessary. Task_UI waits on a semaphore that is signaled by
 the Rx ISR when a key-press is received. It then requests the input char from 
 the usart_uart1_getchar() function provided in the Pumpkin libraries for MSP430
 and uses a switch case on this char to decide on the action to perform.
-Commands supported are - 
-h/H/?: help(lists commands)
-i/I: status information
-r/R: reset (restart program)
-t/T: display on-chip temperature
-v/V: display version
-1: switch to battery state CHRG_CC
-2: switch to battery state CHRG_CV
-3: switch to battery state CHRG_FLT
-4: switch to battery state DIS_HI_V
-5: switch to battery state DIS_MED_V
-6: switch to battery state DIS_LO_V
-7: switch to battery state DIS_DEAD
-S: display battery state number
+<br>Commands supported are - 
+<br>h/H/?: help(lists commands)
+<br>i/I: status information
+<br>r/R: reset (restart program)
+<br>t/T: display on-chip temperature
+<br>v/V: display version
+<br>1: switch to battery state CHRG_CC
+<br>2: switch to battery state CHRG_CV
+<br>3: switch to battery state CHRG_FLT
+<br>4: switch to battery state DIS_HI_V
+<br>5: switch to battery state DIS_MED_V
+<br>6: switch to battery state DIS_LO_V
+<br>7: switch to battery state DIS_DEAD
+<br>S: display battery state number
 
 Input Parameters: None
-Outputs: None
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+<br>Outputs: None
+
 */
 void TaskUI(void) {
   char battState;  

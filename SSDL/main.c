@@ -24,24 +24,20 @@ char strTmp[256];  // General-purpose buffer for creating long strings
 
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 main() function for the program. 
 
 Prints a startup message with version number and date/time of build.
 Creates the Salvo tasks and events required by the program.
-Enables interrupts.
-Starts the OS Scheduler.
+<br>Enables interrupts.
+<br>Starts the OS Scheduler.
 
 Tasks created: TaskADC, TaskBatt, TaskIO, TaskUI, TaskLED
-Events created: Semaphore (SEM_UI_CHAR)
+<br>Events created: Semaphore (SEM_UI_CHAR)
 
 Input arguments: None.
-Output: None.
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+<br>Output: None.
+
 */
 void main(void) {
 

@@ -7,9 +7,7 @@
 #include "salvo.h"                // Req'd because we call e.g. OSDelay() 
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 TaskLED()
 
 Task that sets the three-LED bar graph based on the current battery voltage,
@@ -20,11 +18,9 @@ current state of the battery to determine which LEDs need to be turned on/off
 using the SetLED and ClrLED functions defined in io2.c.
 
 Input argument: None
-Output: None
+<br>Output: None
 
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+
 */
 
 void TaskLED(void) {

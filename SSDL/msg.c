@@ -4,20 +4,16 @@
 #include "usart_uart.h"
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 Function getDays()
 
 Function that outputs the amount of days elapsed since the last reset, based on
 the number of ticks obtained using OSGetTicks().
 
 Input argument:  None
-Output argument:  Number of days elapsed 
+<br>Output argument:  Number of days elapsed 
 
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+
 */
 
 int getDays (void){
@@ -30,9 +26,7 @@ int getDays (void){
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 Function getHours()
 
 Function that outputs the amount of hours elapsed since the last reset of the 
@@ -40,11 +34,9 @@ code, based on the number of ticks obtained using OSGetTicks(). The number of
 hours rolls back to zero upon reaching 24 hours.
 
 Input argument:  None
-Output argument:  Number of hours elapsed
+<br>Output argument:  Number of hours elapsed
 
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+
 */
 
 int getHours (void){
@@ -59,9 +51,7 @@ int getHours (void){
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 Function getMinutes()
 
 Function that outputs the amount of minutes elapsed since the last reset of the
@@ -69,11 +59,9 @@ code, based on the number of ticks obtained using OSGetTicks(). The number of
 minutes rolls back to zero upon reaching 60 minutes.
 
 Input argument:  None
-Output argument:  Number of minutes elapsed
+<br>Output argument:  Number of minutes elapsed
 
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+
 */
 
 int getMinutes (void){
@@ -88,9 +76,7 @@ int getMinutes (void){
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 Function getSeconds()
 
 Function that outputs the amount of seconds elapsed since the last reset of the
@@ -98,11 +84,9 @@ code, based on the number of ticks obtained using OSGetTicks(). The number of
 seconds rolls back to zero upon reaching 60 seconds.
 
 Input argument:  None
-Output argument:  Number of seconds elapsed
+<br>Output argument:  Number of seconds elapsed
 
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+
 */
 
 int getSeconds (void){
@@ -117,9 +101,7 @@ int getSeconds (void){
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 Function getTenMillis()
 
 Function that outputs the amount of tens of milliseconds elapsed since the 
@@ -127,11 +109,9 @@ last reset of the code, based on the number of ticks obtained using OSGetTicks()
 The number of tens of milliseconds rolls back to zero upon reaching 100.
 
 Input argument:  None
-Output argument:  Number of tens of milliseconds elapsed  
+<br>Output argument:  Number of tens of milliseconds elapsed  
 
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+
 */
 
 int getTenMillis(void) {
@@ -144,9 +124,7 @@ int getTenMillis(void) {
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 Function MsgTS()
 
 Function that prints a time-stamped string, using the following format:
@@ -157,11 +135,9 @@ whenever there is a need to directly display something on the terminal,
 as long as there is USB connection with the SSDL GPB/MSP430 board.
 
 Input argument: String to be displayed
-Output argument: None
+<br>Output argument: None
 
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+
 */
 
 void MsgTS (const char * cP) {
