@@ -13,7 +13,7 @@ TaskIO()
 Task that prints a message when it starts, and then idles.
 
 Input parameters: none
-\nOutputs: none
+<br>Outputs: none
 */
 void TaskIO(void) {
   MsgTS(STR_TASK_IO ": Starting.");
@@ -24,18 +24,12 @@ void TaskIO(void) {
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
 SetLED0() ClrLED0()
 
 Functions that control the state of LED0.
 
 Input parameters: none
-Outputs: none
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+<br>Outputs: none
 */
 void ClrLED0(void) {
   P2DIR |=  BIT0;
@@ -48,18 +42,12 @@ void SetLED0(void) {
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
 SetLED1() ClrLED1()
 
 Functions that control the state of LED1.
 
 Input parameters: none
-Outputs: none
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+<br>Outputs: none
 */
 void ClrLED1(void) {
   P2DIR |=  BIT1;
@@ -72,18 +60,12 @@ void SetLED1(void) {
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
 SetLED2() ClrLED2()
 
 Functions that control the state of LED2.
 
 Input parameters: none
-Outputs: none
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+<br>Outputs: none
 */
 void ClrLED2(void) {
   P2DIR |=  BIT2;
@@ -96,18 +78,12 @@ void SetLED2(void) {
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
 TurnChargerOn() TurnChargerOff()
 
 Functions that control the state of the charger
 
 Input parameters: none
-Outputs: none
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+<br>Outputs: none
 */
 
 void TurnChargerOn(void){
@@ -121,18 +97,12 @@ void TurnChargerOff(void){
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
 TurnRegulatorOn() TurnRegulatorOff()
 
 Functions that control the state of the regulator.
 
 Input parameters: none
-Outputs: none
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+<br>Outputs: none
 */
 
 void TurnRegulatorOff(void){
@@ -148,19 +118,13 @@ void TurnRegulatorOn(void){
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
 GetACPR()
 
 Function that returns the ACPR bit, which indicates whether the AC power is
 connected.
 
 Input parameters: none
-Outputs: char ACPR
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+<br>Outputs: char ACPR
 */
 char GetACPR(void) {
 //  P2DIR &=  ~BIT6;
@@ -176,19 +140,13 @@ char GetACPR(void) {
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
 GetFault()
 
 Function that returns the FAULT bit, which indicates whether a fault has
 occurred during charging.
 
 Input parameters: none
-Outputs: char FAULT
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+<br>Outputs: char FAULT
 */
 char GetFault(void) {
 //  P2DIR &=  ~BIT7;
@@ -204,18 +162,12 @@ char GetFault(void) {
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
 GetRegulatorState()
 
 Function that returns the state of the regulator
 
 Input parameters: none
-Outputs: char RegulatorState
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+<br>Outputs: char RegulatorState
 */
 char GetRegulatorState(void){
   return RegulatorState;
