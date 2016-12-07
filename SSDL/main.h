@@ -2,15 +2,11 @@
 #define __main_h
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 Project-wide definitions and other items that might be used across a multitude
 of files ... kind of a catch-all.
 
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+
 */
 
 extern char strTmp[];            // Anyone can use this shared buffer

@@ -14,19 +14,19 @@ telemDisplay()
 Function that printstelemetry collected by the system in a readable format, 
 including voltages, currents and status information as shown below:
 
-<br>+5V_USB          x.xxV       Signal SNS_USB
-<br>charge time    xxxxx s       Time elapsed since charging started
+<br>+5V_USB          (x.xxV)       Signal SNS_USB
+<br>charge time    (xxxxx s)       Time elapsed since charging started
 
-<br>MCU              x.xxV       Signal VCC_MCU 
-<br>VCC              x.xxV       SNS_VCC
-<br>VCC Current   xxxxx mA       Calculated VCC current
-<br>temp               xxC       On-chip temperature
+<br>MCU              (x.xxV)       Signal VCC_MCU 
+<br>VCC              (x.xxV)       SNS_VCC
+<br>VCC Current   (xxxxx mA)       Calculated VCC current
+<br>temp               (xxC)       On-chip temperature
  
-<br>Batt:            x.xxV      Signal SNS_BATT
-<br>PROG:            x.xxV      Signal SNS_PROG
-<br>CHRG:            x.xxV      Signal SNS_CHRG
-<br>-ACPR:          1 or 0      -ACPR bit
-<br>-FAULT:         1 or 0      -FAULT bit
+<br>Batt:            (x.xxV)      Signal SNS_BATT
+<br>PROG:            (x.xxV)      Signal SNS_PROG
+<br>CHRG:            (x.xxV)      Signal SNS_CHRG
+<br>-ACPR:          (1 or 0)      -ACPR bit
+<br>-FAULT:         (1 or 0)      -FAULT bit
 
 Input Parameters: None
 <br>Outputs: None
