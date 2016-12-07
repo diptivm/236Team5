@@ -13,9 +13,7 @@ TaskIO()
 Task that prints a message when it starts, and then idles.
 
 Input parameters: none
-\param none
-Outputs: none
-\return The number of OS ticks since charging was started
+\nOutputs: none
 */
 void TaskIO(void) {
   MsgTS(STR_TASK_IO ": Starting.");
