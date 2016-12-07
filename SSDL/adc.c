@@ -76,16 +76,12 @@ static unsigned int v_u16_user_a9;
 static unsigned int v_u16_vcc_mcu;
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 AverageADCSamples()
 
 Return the average of the ADC samples 
 
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+
 */
 static unsigned int AverageADCSamples(unsigned int * p) {
   unsigned int average;
@@ -104,16 +100,12 @@ static unsigned int AverageADCSamples(unsigned int * p) {
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 RtnXYZ()
 
 Return various sampled values in a specified format.
 
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+
 */
 unsigned int RtnOnChipTemp(void) {
   return ((((long)v_u16_temp-1615)*704)/4095);
@@ -144,16 +136,12 @@ float RtnPROG(void) {
 }
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 RtnUserA5|6|7|8|9()
 
 Return user-available ADC channels in raw format.
 
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+
 */
 unsigned int RtnUserA5(void) {
   return (v_u16_user_a5);
@@ -177,18 +165,13 @@ unsigned int RtnUserA9(void) {
 
 
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 RtnVCCCurrent()
 
 Return +3.3V out current in mA. Current is computed as the difference between 
 VCC_MCU and VCC, divided by the resistance of the MAX890 switch. 10mV 
 difference = 27mA reported.
 
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
 */
 ////#if 0
 //float RtnVCCCurrent(void) {
@@ -210,9 +193,7 @@ float RtnVCCCurrent(void) {
     }
 }
 /**
-/******************************************************************************
-****                                                                       ****
-**                                                                           **
+
 TaskMeasureVoltages()
 
 Initializes ADC12 for a running sampling of all twelve ADC channels, with
@@ -221,9 +202,7 @@ channel to yield a current value for that channel.
 
 Samples are tranferred into their holding arrays via the ISR.
 
-**                                                                           **
-****                                                                       ****
-*******************************************************************************
+
 */
 void TaskADC(void) 
 { 
