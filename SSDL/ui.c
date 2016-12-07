@@ -1,12 +1,12 @@
 #include <ctype.h>
 #include "batt.h"                 //Req'd because we use several variables and functions related to battery state
 #include "main.h"                 // Application header
-#include "msg.h"                  // Req'd because we call MsgTS()
 #include "msp430.h"              //Req'd because we use WDTCTL 
 #include "salvo.h"                // Req'd because we call e.g. OSDelay() 
 #include "telem.h"               // Req'd because we call tempDisplay() and telemDisplay()
 #include "ui.h"                 // Good to self-reference
 #include "usart_uart.h"           //Req'd because we call usart_uart1_getchar()
+#include "msg.h"                  // Req'd because we call MsgTS()
 
 /**
 /******************************************************************************
